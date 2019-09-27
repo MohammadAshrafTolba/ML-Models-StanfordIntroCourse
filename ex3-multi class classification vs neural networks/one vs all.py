@@ -26,8 +26,8 @@ def lrCostFunc(theta, X, y, my_lambda = 0):
 
     grad = np.dot(X.T, h-y) / m
     #reg_term2 = theta[1:] * (my_lambda/m)
-    grad[1:] = grad[1:] +reg_term
-    return (cost,grad)
+    grad[1:] = grad[1:] + reg_term
+    return cost, grad
 
 def costGradient(X, theta, my_lambda):
     theta = theta.reshape((401, 1))
@@ -48,7 +48,7 @@ def OneVsAll(X, y, num_labels, my_lambda=0):
                           jac=True,
                           tol=1e-6,
                           method='TNC',
-                          options={'maxiter' : 20000})
+                          options={'maxiter' : 500})
         all_theta[:,current_class] = result.x
 
     for current_class in range(num_labels):
