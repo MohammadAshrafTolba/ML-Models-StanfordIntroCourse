@@ -68,14 +68,13 @@ def predictOneVsAll(X_row, optimized_theta):
 def accuracy(X, y, optimized_theta):
     correct = 0
     total = X.shape[0]
-    for i in range(X.shape[0]):
+    for i in range(total):
         if predictOneVsAll(X[i,:], optimized_theta) == y[i]:
             correct += 1
     return (correct/total) *100
 
 
 data = loadmat('ex3data1')
-#print(data)
 
 X = data['X']
 y = data['y']
