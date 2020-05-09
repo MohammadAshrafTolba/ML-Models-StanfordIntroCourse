@@ -1,7 +1,7 @@
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.special import expit as sigmoid
-#from scipy import optimize
+
 
 #np.seterr(divide = 'warn')
 
